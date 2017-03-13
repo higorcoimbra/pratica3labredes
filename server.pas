@@ -30,7 +30,7 @@ begin
   SAddr.sin_family:=AF_INET;
   { port 50000 in network order }
   SAddr.sin_port:=htons(5000);
-  SAddr.sin_addr.s_addr:=HostToNet((127 shl 24) or 1);
+  SAddr.sin_addr.s_addr:=HosttoNet((10 shl 24) or (122 shl 8) or 150);
   if fpBind(S,@SAddr,sizeof(saddr))=-1 then
    PError ('Server : Bind : ');
   if fpListen (S,1)=-1 then
